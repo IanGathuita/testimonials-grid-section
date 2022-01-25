@@ -1,6 +1,7 @@
 *{
     margin:0;
     padding: 0;
+    font-family: "Barlow Semi Condensed";
 }
 html,body{
     max-width: 100vw;
@@ -38,26 +39,29 @@ main{
     color: #ffffff;
 }
 img{
+    max-width: 40px;
+    height: auto;
     border-radius: 50%;
 }
 p{
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height:26px;
 }
 h3{
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 26px;
 }
 h2{
-    font-size: 22px;
-    line-height: 32px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 4px;
 
 }
 
 .user{
     display: grid;
-    grid-template-columns: 2fr 8fr;
+    grid-template-columns: 60px auto;
+    grid-auto-rows: minmax(20px,20px);
     margin-bottom: 8px;
 }
 .user img{
@@ -73,33 +77,36 @@ h2{
 
 @media only screen and (min-width:768px) {
     main{
+        max-width: 80%;
+        margin: 24px auto;
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: auto auto;
+        grid-template-areas: 
+        "first-post first-post second-post fifth-post"
+        "third-post fourth-post fourth-post fifth-post"
+        ;
     }
     .first-post{
-        grid-column-start: 1;
-        grid-column-end: 3;
+        grid-area: first-post;
     }
     .second-post{
-        grid-column-start: 3;
-        grid-column-end: 4;
+        grid-area: second-post;
     }
     .third-post{
-        grid-column-start: 1;
-        grid-column-end: 2;
+        grid-area: third-post;
     }
     .fourth-post{
-        grid-column-start: 2;
-        grid-column-end: 4;
+        grid-area: fourth-post;
 
     }
     .fifth-post{
-        grid-column-start: 4;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 3;
+        grid-area: fifth-post;
 
+    }
+    /* In order to fit in the height as required. May affect readability */
+    p{
+        line-height:19px;
     }
 
     
