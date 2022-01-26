@@ -70,9 +70,14 @@ h2{
 .user h3{
     grid-row: 1/2;
 
+
+}
+.post p,h2{
+    opacity: 70%;
 }
 .user p{
     grid-row: 2/3;
+    opacity: 50%;
 }
 
 @media only screen and (min-width:768px) {
